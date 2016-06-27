@@ -1,0 +1,12 @@
+node_modules
+npm*.log
+tmp
+.idea
+.DS_Store
+.project
+.sublime-*
+.project
+.settings
+
+# ignore result folder from mocha test
+result/
