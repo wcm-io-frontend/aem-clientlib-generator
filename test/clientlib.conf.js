@@ -28,6 +28,8 @@ module.exports = {
   list: [
     {
       name: "test.base.apps.mainapp",
+      cssProcessor: ["default:none", "min:none"], // disable minification for CSS
+      jsProcessor: ["default:none", "min:gcc;obfuscate=true"],  // using google closure compiler instead of YUI
       assets: {
         js: [
           {src: "src/frontend/js/app.js", dest: "app.js"},

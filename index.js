@@ -29,6 +29,8 @@ var fse = require("fs-extra");
  * @property {String} name - Clientlib name
  * @property {Array<String>} [embed] - other Clientlib names that should be embedded
  * @property {Array<String>} [dependencies] - other Clientlib names that should be included
+ * @property {Array<String>} [cssProcessor] - Clientlib processor specification for CSS
+ * @property {Array<String>} [jsProcessor] - Clientlib processor specification for JS
  * @property {Array<Object>} assets - content that should be copied to the clientlib folder, more details below
  */
 
@@ -116,13 +118,11 @@ function writeClientLibJson(item) {
     'categories': [item.name]
   };
 
-  if (item.embed) {
-    content.embed = item.embed;
-  }
-
-  if (item.dependencies) {
-    content.dependencies = item.dependencies;
-  }
+  ['embed', 'dependencies', 'cssProcessor', 'jsProcessor'].forEach(function(nodeKey) {
+    if (item.hasOwnProperty(nodeKey)) {
+      content[nodeKey] = item[nodeKey];
+    }
+  });
 
   var jsonFile = path.join(item.path, item.name + ".json");
   fse.writeJsonSync(jsonFile, content, {spaces: 2});
