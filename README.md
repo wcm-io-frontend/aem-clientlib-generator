@@ -1,7 +1,8 @@
 # aem-clientlib-generator
 
-A node plugin that creates ClientLib configuration files (repository nodes) for [AEM ClientLibs|https://docs.adobe.com/docs/en/aem/6-2/develop/the-basics/clientlibs.html],
-creates Client Library Folders and synchronizes all assets.
+A node plugin that creates ClientLib configuration files (repository nodes) for 
+[AEM ClientLibs](https://docs.adobe.com/docs/en/aem/6-2/develop/the-basics/clientlibs.html),
+creates _Client Library Folders_ and synchronizes all assets.
 
 
 ## Installation
@@ -36,7 +37,7 @@ var clientlib = require("aem-clientlib-generator");
 ### The `assets` Object
 
 The `assets` object determine the content that should be pushed into the clientlib folder. The key stands for
-the content type, `js` for JavaScript files, `css` for Styles and `resources` for other content such as
+the content type, `js` for JavaScript files, `css` for styles and `resources` for other content such as
 fonts or images.
 
 ```javascript
@@ -97,6 +98,7 @@ clientlib([
 
       // creates the JS configuration file:
       //  path/to/clientlibs-root/test.base.apps.mainapp/js.txt
+      // which lists all JavaScript files from the ClientLib.
       // and copies all files into a js subfolder (default base):
       //  path/to/clientlibs-root/test.base.apps.mainapp/js/
       js: [
@@ -106,8 +108,11 @@ clientlib([
         {src: "src/frontend/js/app.js", dest: "app.js"},
 
         // file will be copied to:
-        //  path/to/clientlibs-root/test.base.apps.mainapp/js/libs/mylib.js
-        {src: "src/frontend/js/libs/mylib.js", dest: "libs/mylib.js"}
+        //  path/to/clientlibs-root/test.base.apps.mainapp/js/libs/mylib.min.js
+        {src: "src/frontend/js/libs/mylib.min.js", dest: "libs/mylib.min.js"},
+        
+        // copy source map files as well 
+        {src: "src/frontend/js/libs/mylib.min.js.map", dest: "libs/mylib.min.js.map"}
       ],
 
       // creates the CSS configuration file:
@@ -136,7 +141,8 @@ clientlib([
 
       // creates the CSS configuration file:
       //  path/to/clientlibs-root/test.base.apps.secondapp/css.txt
-      // and copies all CSS files into the defined base:
+      // that lists all CSS files from the ClientLib.
+      // All files defined below will be copied into the defined base:
       //  path/to/clientlibs-root/test.base.apps.secondapp/style/
       css: {
         base: "style", // changes the `base` from `css` (default) to `style`
