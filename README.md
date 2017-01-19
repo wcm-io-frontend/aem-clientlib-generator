@@ -26,6 +26,8 @@ var clientlib = require("aem-clientlib-generator");
   * `name` `{String}` Clientlib name (required)
   * `embed` `{Array<String>}` other Clientlib names that should be embedded (optional)
   * `dependencies` `{Array<String>}` other Clientlib names that should be included (optional)
+  * `cssProcessor` `{Array<String>}` configuration for the clientlib CSS processor, requires AEM 6.2 (optional)
+  * `jsProcessor` `{Array<String>}` configuration for the clientlib JS processor, requires AEM 6.2 (optional)
   * `assets` `{Object}` content that should be copied to the clientlib folder, more details below (required)
 
 * `options` `{Object}` global options to be used for all clientlib definitions (optional)
@@ -89,11 +91,19 @@ var clientlib = require("aem-clientlib-generator");
 clientlib([
   {
     name: "test.base.apps.mainapp",
-    // the name will be used as subfolder in clientlibs root and for the AEM respository node
-    // in this example is creates:
+    // the name will be used as subfolder in clientlibs root and for the AEM repository node
+    // in this example it creates:
     //   the subfoler: path/to/clientlibs-root/test.base.apps.mainapp/
     //   repository node: path/to/clientlibs-root/test.base.apps.mainapp.json
+    
+    // new in AEM 6.2: configure the clientlib processor by yourself:
+    // An example to disable minification for CSS:
+    cssProcessor: ["default:none", "min:none"],
+    
+    // using google closure compiler for minification instead of YUI
+    jsProcessor: ["default:none", "min:gcc;obfuscate=true"],
 
+  
     assets: {
 
       // creates the JS configuration file:
