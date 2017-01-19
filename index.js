@@ -88,9 +88,15 @@ function writeAssetTxt(clientLibPath, asset) {
 
   // determines file path relative to the base
   var filenames = [];
+  var typeExt = "." + asset.type;
+
   asset.files.forEach(function(file){
-    var rel = path.relative(basePath, file.dest);
-    filenames.push(rel);
+
+    // inject only files that correspondents to the asset type
+    if (path.extname(file.dest) === typeExt) {
+      var rel = path.relative(basePath, file.dest);
+      filenames.push(rel);
+    }
   });
 
   var content = "#base=" + asset.base + "\n\n" + filenames.join("\n");
