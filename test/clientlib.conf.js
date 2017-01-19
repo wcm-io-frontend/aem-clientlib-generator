@@ -31,7 +31,8 @@ module.exports = {
       assets: {
         js: [
           {src: "src/frontend/js/app.js", dest: "app.js"},
-          {src: "src/frontend/js/libs/mylib.js", dest: "libs/mylib.js"}
+          {src: "src/frontend/js/libs/mylib.min.js", dest: "libs/mylib.min.js"},
+          {src: "src/frontend/js/libs/mylib.min.js.map", dest: "libs/mylib.min.js.map"}
         ],
         css: [
           "src/frontend/css/styling.css",
