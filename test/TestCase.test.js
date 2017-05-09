@@ -18,6 +18,7 @@
 "use strict";
 
 var fs = require("fs");
+var walk = require("klaw");
 var fse = require("fs-extra");
 var clientlib = require("../lib/clientlib");
 var fileExists = require("../lib/clientlib").fileExists;
@@ -46,7 +47,7 @@ describe("Test output", function() {
     clientlib(libs, clientLibConf, function() {
 
       var items = []; // files, directories, symlinks, etc
-      fse.walk(expectedDir)
+      walk(expectedDir)
         .on("data", function (item) {
           items.push(item.path)
         })
