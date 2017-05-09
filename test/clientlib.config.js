@@ -76,6 +76,27 @@ module.exports = {
           ]
         }
       }
+    },
+    {
+      name: "test.base.apps.fourth",
+      assets: {
+        js: {
+          // "flatten" is true by default and using file's basename instead of path for destination
+          // set to false to keep the folder hierarchy below "cwd"
+          flatten: false, // remove this option if you like a flat list of files in your clientlib
+          cwd: "src/frontend/js/", // change working directory (will be stripped from destination)
+          files: [
+            "**/*.js",  // match all js files recursively
+            "**/*.js.map"
+          ]
+        },
+        css: [
+          // all css will copied to destination folder "style" (in base folder css)
+          {src: "src/frontend/css/*.css", dest: "style/"},
+          // all css will copied to destination folder "vendor" (in base folder css)
+          {src: "src/frontend/secondapp/*.css", dest: "vendor/"}
+        ]
+      }
     }
   ]
 };
