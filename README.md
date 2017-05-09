@@ -10,15 +10,88 @@ creates _Client Library Folders_ and synchronizes all assets.
 npm install aem-clientlib-generator
 ```
 
-```js
-var clientlib = require("aem-clientlib-generator");
-// clientlib() is the function to use
-```
-
 
 ## Usage
 
-### clientlib(arrProps | props, [options], callback)
+### Command Line Interface
+The CLI `clientlib` is located in `./bin/clientlib-cli.js`.
+The command can be used without parameters, it loads the default configuration file `clientlib.config.js`.
+More options are described in help menu:
+
+```text
+Options:
+  --help, -h     Show help                                             [boolean]
+  --version, -v  Show version number                                   [boolean]
+  --dry          'Dry run' without write operations.                   [boolean]
+  --verbose      Prints more details                                   [boolean]
+```
+
+#### clientlib.config.js
+A clientlib configuration file is a simple exported module:
+```js
+module.exports = {
+  // default working directory (can be changed per 'cwd' in every asset option)
+  context: __dirname,
+
+  // path to the clientlib root folder (output)
+  clientLibRoot: "path/to/clientlib-root",
+
+  // define all clientlib options here as array... (multiple clientlibs)
+  libs: [
+    {
+      name: "test.base.apps.mainapp",
+      assets: {
+        js: [
+          "src/frontend/js/app.js"
+        ],
+        css: [
+          "src/frontend/css/styling.css"
+        ]
+      }
+    },
+    ...// next clientlibs
+  ],
+
+  // or as object (single clientlib)
+  libs: {
+    name: "test.base.apps.mainapp",
+    assets: {
+      js: [
+        "src/frontend/js/app.js"
+      ],
+      css: [
+        "src/frontend/css/styling.css"
+      ]
+    }
+  }
+}
+```
+
+#### npm scripts
+The CLI can be used in a project as local module via npm scripts (defined in `package.json`).
+```js
+  // package.json file:
+
+  "scripts": {
+    "test": "mocha",
+    "build": "clientlib --verbose"
+  }
+```
+In this case `npm run build` tries to load the default clientlib configuration file
+`clientlib.config.js` (same directory like package.json) and generates all clientslib
+as defined.
+
+
+### Module: clientlib(arrProps | props, [options], callback)
+
+Import the module into a JavaScript file and run the module as a function:
+```js
+var clientlib = require("aem-clientlib-generator");
+clientlib(arrProps, { verbose: true }, function() {
+  console.log("generator has finished");
+});
+```
+**Important:** Due to many write operations, the `clientlib` function is **asynchronously**!
 
 * `arrProps` `{Array<Object>}` Array of Clientlib configuration properties (see below)
 * `props` `{Object}` Clientlib configuration properties
@@ -32,7 +105,11 @@ var clientlib = require("aem-clientlib-generator");
 
 * `options` `{Object}` global options to be used for all clientlib definitions (optional)
   * `clientLibRoot` {String} Clientlib root path
-  * `cwd` {String} changes the current working directory (via `process.chdir()`)
+  * `context` {String} changes the current working directory (via `process.chdir()`)
+  * `cwd` {String} alias for `context`
+  * `verbose` {Boolean} prints detailed information during generation
+  * `dry` {Boolean} dry run without file write operations (sets verbose)
+
 
 * `callback` `{Function}` to be called if clientlib() has finished
 

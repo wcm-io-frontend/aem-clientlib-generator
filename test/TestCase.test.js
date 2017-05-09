@@ -19,12 +19,12 @@
 
 var fs = require("fs");
 var fse = require("fs-extra");
-var clientlib = require("../index");
-var fileExists = require("../index").fileExists;
+var clientlib = require("../lib/clientlib");
+var fileExists = require("../lib/clientlib").fileExists;
 var path = require("path");
 var assert = require('assert');
 
-var clientLibConf = require("./clientlib.conf");
+var clientLibConf = require("./clientlib.config");
 
 var resultDir = path.join(__dirname, "result");
 var expectedDir = path.join(__dirname, "expected");
@@ -40,7 +40,10 @@ describe("Test output", function() {
 
   it("should create files correctly", function(done) {
 
-    clientlib(clientLibConf.list, clientLibConf.options, function() {
+    var libs = clientLibConf.libs;
+    delete clientLibConf.libs;
+
+    clientlib(libs, clientLibConf, function() {
 
       var items = []; // files, directories, symlinks, etc
       fse.walk(expectedDir)

@@ -20,12 +20,10 @@
 var path = require("path");
 module.exports = {
 
-  options: {
-    cwd: __dirname,
-    clientLibRoot: path.join(__dirname, "result/clientlibs-root")
-  },
+  context: __dirname,
+  clientLibRoot: path.resolve(__dirname, "result", "clientlibs-root"),
 
-  list: [
+  libs: [
     {
       name: "test.base.apps.mainapp",
       cssProcessor: ["default:none", "min:none"], // disable minification for CSS
