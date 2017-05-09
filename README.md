@@ -108,7 +108,7 @@ clientlib(arrProps, { verbose: true }, function() {
   * `context` {String} changes the current working directory (via `process.chdir()`)
   * `cwd` {String} alias for `context`
   * `verbose` {Boolean} prints detailed information during generation
-  * `dry` {Boolean} dry run without file write operations (sets verbose)
+  * `dry` {Boolean} dry run without file write operations (sets automatically verbose to true)
 
 
 * `callback` `{Function}` to be called if clientlib() has finished
@@ -144,6 +144,10 @@ The following can be configured:
     * file object contains:
       * `src` {String} - source file relative to the current working directory or the global `cwd` option, if set
       * `dest` {String} - destination relative to the clientlib folder including base
+  * `cwd` {String} - change working directory (relative to the context / global `cwd` option); only available with glob pattern
+  * `flatten` {Boolean} - using file's basename instead of folder hierarchy; default true; only available with glob pattern
+
+For an glob example see example section below.
 
 ```javascript
 // simple version
@@ -155,7 +159,7 @@ js: [
 js: {
   base: "js"
   files: [
-    {src:"pth/to/file.js",, dest: "file.js"}
+    {src:"pth/to/file.js", dest: "file.js"},
     {src:"pth/to/lib/file.js", dest: "lib/file.js"}
   ]
 }
@@ -254,6 +258,28 @@ clientlib([
           "src/frontend/resources/notice.txt"
         ]
       }
+    }
+  },
+  {
+    name: "test.base.apps.fourth",
+    assets: {
+      js: {
+        // "flatten" is true by default and using file's basename instead of path for destination
+        // set to false to keep the folder hierarchy below "cwd"
+        flatten: false, // remove this option if you like a flat list of files in your clientlib
+        cwd: "src/frontend/js/", // change working directory (will be stripped from destination)
+        files: [
+          "**/*.js",  // match all js files recursively
+          "**/*.js.map"
+        ]
+      },
+      css: [
+        // all css will copied to destination folder "style" (in base folder css)
+        {src: "src/frontend/css/*.css", dest: "style/"},
+
+        // all css will copied to destination folder "vendor" (in base folder css)
+        {src: "src/frontend/secondapp/*.css", dest: "vendor/"}
+      ]
     }
   }
 ],

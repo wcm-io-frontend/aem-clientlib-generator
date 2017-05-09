@@ -4,6 +4,7 @@
 ### Added
 - clientlib CLI with new configuration file `clientlib.config.js`
 - options verbose and dry
+- add glob feature
 
 ## 1.1.0
 
