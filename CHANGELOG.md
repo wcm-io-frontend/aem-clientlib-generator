@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.1
+### Fixed
+- missing glob version
+
 ## 1.2.0
 ### Added
 - clientlib CLI with new configuration file `clientlib.config.js`
