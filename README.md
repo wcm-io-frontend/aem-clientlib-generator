@@ -102,6 +102,8 @@ clientlib(arrProps, { verbose: true }, function() {
   * `cssProcessor` `{Array<String>}` configuration for the clientlib CSS processor, requires AEM 6.2 (optional)
   * `jsProcessor` `{Array<String>}` configuration for the clientlib JS processor, requires AEM 6.2 (optional)
   * `assets` `{Object}` content that should be copied to the clientlib folder, more details below (required)
+  * `allowProxy` `{Boolean}` allow for Clientlib creation under `/apps/myapp/clientLibs` but enable proxy to `/etc.clientlibs/myapp/clientlibs/mylib` See [AEM 6.3 Documentation](https://docs.adobe.com/docs/en/aem/6-3/develop/the-basics/clientlibs.html#Locating%20a%20Client%20Library%20Folder%20and%20Using%20the%20Proxy%20Client%20Libraries%20Servlet)
+  * `longCacheKey` `{String}` optional string with placeholders to use with URL Fingerprinting, eq. `"${project.version}-${buildNumber}"`
 
 * `options` `{Object}` global options to be used for all clientlib definitions (optional)
   * `clientLibRoot` {String} Clientlib root path
@@ -182,9 +184,14 @@ clientlib([
     cssProcessor: ["default:none", "min:none"],
     
     // using google closure compiler for minification instead of YUI
-    jsProcessor: ["default:none", "min:gcc;obfuscate=true"],
+    jsProcessor: ["default:none", "min:gcc"],
 
-  
+    // new in AEM 6.3: create clientLibs in /apps/myapp/clientlibs and proxy to /etc.clientlibs/myapp
+    allowProxy: true,
+    
+    // allow URL Fingerprinting via placeholder
+    longCacheKey: "${project.version}-${buildNumber}",
+    
     assets: {
 
       // creates the JS configuration file:
