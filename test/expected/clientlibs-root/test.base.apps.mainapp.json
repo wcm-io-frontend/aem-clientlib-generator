@@ -9,6 +9,8 @@
   ],
   "jsProcessor": [
     "default:none",
-    "min:gcc;obfuscate=true"
-  ]
+    "min:gcc"
+  ],
+  "allowProxy": true,
+  "longCacheKey": "${project.version}-${buildNumber}"
 }

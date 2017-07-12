@@ -27,7 +27,9 @@ module.exports = {
     {
       name: "test.base.apps.mainapp",
       cssProcessor: ["default:none", "min:none"], // disable minification for CSS
-      jsProcessor: ["default:none", "min:gcc;obfuscate=true"],  // using google closure compiler instead of YUI
+      jsProcessor: ["default:none", "min:gcc"],  // using google closure compiler instead of YUI,
+      allowProxy: true,
+      longCacheKey: "${project.version}-${buildNumber}",
       assets: {
         js: [
           {src: "src/frontend/js/app.js", dest: "app.js"},

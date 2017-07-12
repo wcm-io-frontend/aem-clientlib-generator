@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.2
+### Added 
+- support for _allowProxy_ in clientLibs configuration (optional in AEM 6.3)
+- support for _longCacheKey_ in clientLibs configuration (optional)
+
+## 1.2.1
+### Fixed
+- missing glob version
+
 ## 1.2.0
 ### Added
 - clientlib CLI with new configuration file `clientlib.config.js`
