@@ -184,7 +184,7 @@ clientlib([
     cssProcessor: ["default:none", "min:none"],
     
     // using google closure compiler for minification instead of YUI
-    jsProcessor: ["default:none", "min:gcc"],
+    jsProcessor: ["default:none", "min:gcc;compilationLevel=whitespace"],
 
     // new in AEM 6.3: create clientLibs in /apps/myapp/clientlibs and proxy to /etc.clientlibs/myapp
     allowProxy: true,
