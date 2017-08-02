@@ -1,11 +1,12 @@
 # Changelog
 
+## 1.3.0
+### Added
+- `categories` can be set in config to override name as category value
+
 ## 1.2.4
 ### Fixed
 - added missing dependency `yargs`
-
-### Added
-- `categories` can be set in config to override name as category value
 
 ## 1.2.3
 ### Fixed
