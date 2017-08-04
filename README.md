@@ -99,6 +99,7 @@ clientlib(arrProps, { verbose: true }, function() {
   * `name` `{String}` Clientlib name (required)
   * `embed` `{Array<String>}` other Clientlib names that should be embedded (optional)
   * `dependencies` `{Array<String>}` other Clientlib names that should be included (optional)
+  * `categories` `{Array<String>}` to set a category for the clientLib (optional), ovrrides the default that uses the name as category
   * `cssProcessor` `{Array<String>}` configuration for the clientlib CSS processor, requires AEM 6.2 (optional)
   * `jsProcessor` `{Array<String>}` configuration for the clientlib JS processor, requires AEM 6.2 (optional)
   * `assets` `{Object}` content that should be copied to the clientlib folder, more details below (required)
@@ -184,7 +185,7 @@ clientlib([
     cssProcessor: ["default:none", "min:none"],
     
     // using google closure compiler for minification instead of YUI
-    jsProcessor: ["default:none", "min:gcc"],
+    jsProcessor: ["default:none", "min:gcc;compilationLevel=whitespace"],
 
     // new in AEM 6.3: create clientLibs in /apps/myapp/clientlibs and proxy to /etc.clientlibs/myapp
     allowProxy: true,
