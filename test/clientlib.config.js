@@ -44,6 +44,9 @@ module.exports = {
     },
     {
       name: "test.base.apps.secondapp",
+      categories: [
+        "test.categorie.in.config"
+      ],
       embed: [
         "test.base.apps.thirdapp"   // this clientlib will be auto embedded in AEM (kind of `merging`)
       ],
@@ -97,6 +100,36 @@ module.exports = {
           {src: "src/frontend/css/*.css", dest: "style/"},
           // all css will copied to destination folder "vendor" (in base folder css)
           {src: "src/frontend/secondapp/*.css", dest: "vendor/"}
+        ]
+      }
+    },
+    {
+      name: "test.base.apps.five",
+      categories: [
+        "test.base.apps.five",
+        "test.categorie.in.config"
+      ],
+      embed: [
+        "test.base.apps.thirdapp"   // this clientlib will be auto embedded in AEM (kind of `merging`)
+      ],
+      dependencies: [
+        "test.base.apps.mainapp"    // define clientlib dependency
+      ],
+      assets: {
+        js: {
+          base: "js", // by default the `base` is the asset key property
+          files: [
+            {src: "src/frontend/secondapp/js/lib.js", dest: "secondapp-lib.js"}
+          ]
+        },
+        css: {
+          base: "style", // changes the `base` from `css` (default) to `style`
+          files: [
+            "src/frontend/secondapp/main.css"
+          ]
+        },
+        resources: [
+          "src/frontend/resources/template.html"
         ]
       }
     }

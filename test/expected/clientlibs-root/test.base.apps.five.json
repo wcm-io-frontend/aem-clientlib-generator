@@ -1,6 +1,7 @@
 {
   "jcr:primaryType": "cq:ClientLibraryFolder",
   "categories": [
+    "test.base.apps.five",
     "test.categorie.in.config"
   ],
   "embed": [
