@@ -299,4 +299,6 @@ function() {
   console.log("clientlibs created");
 });
 ```
+### Deploying to AEM:
 
+The generated clientlibrary can be deployed to AEM via [Sling Content Loading](https://sling.apache.org/documentation/bundles/content-loading-jcr-contentloader.html). Take a look at this [wcm-io sample](https://github.com/wcm-io/wcm-io-samples/tree/develop/bundles/clientlibs).
