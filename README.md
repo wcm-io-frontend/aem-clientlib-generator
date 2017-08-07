@@ -91,7 +91,7 @@ clientlib(arrProps, { verbose: true }, function() {
   console.log("generator has finished");
 });
 ```
-**Important:** Due to many write operations, the `clientlib` function is **asynchronously**!
+**Important:** Due to many write operations, the `clientlib` function is **asynchronous**!
 
 * `arrProps` `{Array<Object>}` Array of Clientlib configuration properties (see below)
 * `props` `{Object}` Clientlib configuration properties
