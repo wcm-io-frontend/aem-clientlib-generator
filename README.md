@@ -1,7 +1,7 @@
 # aem-clientlib-generator
 
 A node plugin that creates ClientLib configuration files (repository nodes) for 
-[AEM Client Libraries](https://docs.adobe.com/docs/en/aem/6-3/develop/the-basics/clientlibs.html),
+[AEM Client Libraries](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/clientlibs.html),
 creates _Client Library Folders_ and synchronizes all assets.
 
 It supports both JSON file format (default) and FileVault XML file format (see `serializationFormat` parameter).
@@ -304,6 +304,6 @@ function() {
 ```
 ### Deploying to AEM:
 
-The generated client library can be deployed to AEM via [Sling Content Loading](https://sling.apache.org/documentation/bundles/content-loading-jcr-contentloader.html). Take a look at this [wcm-io sample](https://github.com/wcm-io/wcm-io-samples/tree/develop/bundles/clientlibs).
+The generated client library can be deployed to AEM via [Sling Content Loading](https://sling.apache.org/documentation/bundles/content-loading-jcr-contentloader.html). Take a look at the [wcm.io Sample Application](https://github.com/wcm-io/wcm-io-samples/tree/develop/bundles/clientlibs).
 
 If you've switched the `serializationFormat` to "xml" you can deploy the client library as part of an AEM content package.
