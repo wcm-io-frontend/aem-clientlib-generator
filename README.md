@@ -97,6 +97,7 @@ clientlib(arrProps, { verbose: true }, function() {
 * `props` `{Object}` Clientlib configuration properties
   * `path` `{String}` Clientlib root path (optional if `options.clientLibRoot` is set)
   * `name` `{String}` Clientlib name (required)
+  * `serializationFormat` `{String}` Type of the target archive for which the resources must be generated [json|xml] (optional, default=json)
   * `embed` `{Array<String>}` other Clientlib names that should be embedded (optional)
   * `dependencies` `{Array<String>}` other Clientlib names that should be included (optional)
   * `categories` `{Array<String>}` to set a category for the clientLib (optional), ovrrides the default that uses the name as category
