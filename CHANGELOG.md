@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.4.0
+## 1.4.1
 ### Added
 - support for _serializationFormat_ in clientLibs configuration to enable FileVault XML or JSON (default) output format
 
