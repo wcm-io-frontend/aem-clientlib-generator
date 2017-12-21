@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.0
+### Added
+- support for _serializationFormat_ in clientLibs configuration to enable FileVault XML or JSON (default) output format
+
 ## 1.3.0
 ### Added
 - `categories` can be set in config to override name as category value
