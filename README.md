@@ -107,7 +107,7 @@ clientlib(arrProps, { verbose: true }, function() {
   * `jsProcessor` `{Array<String>}` configuration for the clientlib JS processor, requires AEM 6.2 (optional)
   * `assets` `{Object}` content that should be copied to the clientlib folder, more details below (required)
   * `allowProxy` `{Boolean}` allow for Clientlib creation under `/apps/myapp/clientLibs` but enable proxy to `/etc.clientlibs/myapp/clientlibs/mylib` See [AEM 6.3 Documentation](https://docs.adobe.com/docs/en/aem/6-3/develop/the-basics/clientlibs.html#Locating%20a%20Client%20Library%20Folder%20and%20Using%20the%20Proxy%20Client%20Libraries%20Servlet)
-  * `longCacheKey` `{String}` optional string with placeholders to use with URL Fingerprinting, eq. `"${project.version}-${buildNumber}"`. This requires the [build-helper-maven-plugin](http://www.mojohaus.org/build-helper-maven-plugin/usage.html) configured, see [wcm-io-samples - Clientlibs](https://github.com/wcm-io/wcm-io-samples/blob/develop/bundles/clientlibs/pom.xml#L56).
+  * `longCacheKey` `{String}` optional string with placeholders to use with URL Fingerprinting, eq. `"${project.version}-${buildNumber}"`. This requires the [build-helper-maven-plugin](http://www.mojohaus.org/build-helper-maven-plugin/usage.html) to be configured, see [wcm-io-samples - Clientlibs](https://github.com/wcm-io/wcm-io-samples/blob/develop/bundles/clientlibs/pom.xml#L56).
 
 * `options` `{Object}` global options to be used for all clientlib definitions (optional)
   * `clientLibRoot` {String} Clientlib root path
