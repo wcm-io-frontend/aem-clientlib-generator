@@ -42,6 +42,11 @@ module.exports = {
   libs: [
     {
       name: "test.base.apps.mainapp",
+
+      // optional override path to write clientlib files to, by default files
+      // are written to lib.name/
+      outputPath: "explicit/path/to/lib/or/existing/lib/structure",
+
       assets: {
         js: [
           "src/frontend/js/app.js"
@@ -98,6 +103,7 @@ clientlib(arrProps, { verbose: true }, function() {
 * `arrProps` `{Array<Object>}` Array of Clientlib configuration properties (see below)
 * `props` `{Object}` Clientlib configuration properties
   * `path` `{String}` Clientlib root path (optional if `options.clientLibRoot` is set)
+  * `outputPath` `{String}` Clientlib destination path (optional, overrides default behavior of writing to the above path or options.clientLibRoot, useful to supply your own directory naming convention or if you are clientlib-ifying an existing directory)
   * `name` `{String}` Clientlib name (required)
   * `serializationFormat` `{String}` Type of the target archive for which the resources must be generated [json|xml] (optional, default=json)
   * `embed` `{Array<String>}` other Clientlib names that should be embedded (optional)
@@ -291,6 +297,20 @@ clientlib([
         // all css will copied to destination folder "vendor" (in base folder css)
         {src: "src/frontend/secondapp/*.css", dest: "vendor/"}
       ]
+    }
+  },
+  {
+    name: "test.base.apps.myExistingAssetOrganization",
+    outputPath: path.join(__dirname, 'libs', 'collectionOne'),
+    assets: {
+
+      // uses existing files at ./libs/collectionOne, since base is set to '.'
+      js: {
+        base: ".", // copy the file into `./libs/collectionOne` (outputPath) instead of `{path}/test.base.apps.myExistingAssetOrganization/js`
+        files: [
+          "libs/collectionOne/index.js"
+        ]
+      }
     }
   }
 ],
