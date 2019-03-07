@@ -115,6 +115,10 @@ module.exports = {
       dependencies: [
         "test.base.apps.mainapp"    // define clientlib dependency
       ],
+      cssRewrite: {
+        from: /url\(\/static\/resources\//g,
+        to: 'url(/etc.clientlibs/testapp/clientlibs/testapp-react/resources/'
+      },
       assets: {
         js: {
           base: "js", // by default the `base` is the asset key property

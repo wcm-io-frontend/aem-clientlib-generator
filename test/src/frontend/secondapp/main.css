@@ -1,3 +1,15 @@
 body {
   color: #000;
 }
+
+withBackground {
+  background: url(/static/resources/test.png);
+}
+
+withBackground2 {
+  background: url(/static/resources/test2.png);
+}
+
+withBackground3 {
+  background: url(/otherfolder/resources/test2.png);
+}
