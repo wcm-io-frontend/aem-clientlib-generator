@@ -1,6 +1,6 @@
 {
   "name": "aem-clientlib-generator",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Creates configuration files for AEM ClientLibs and synchronizes assets.",
   "author": {
     "name": "pro!vision GmbH",
@@ -14,6 +14,10 @@
     {
       "name": "Bert-Ulrich Baumann",
       "email": "bbaumann@pro-vision.de"
+    },
+    {
+      "name": "Ingo Fahrentholz",
+      "email": "ifahrentholz@pro-vision.de"
     }
   ],
   "homepage": "https://github.com/wcm-io-frontend/aem-clientlib-generator",
