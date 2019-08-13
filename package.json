@@ -1,6 +1,6 @@
 {
   "name": "aem-clientlib-generator",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Creates configuration files for AEM ClientLibs and synchronizes assets.",
   "author": {
     "name": "pro!vision GmbH",
@@ -43,15 +43,15 @@
     "clientlib": "bin/clientlib-cli.js"
   },
   "dependencies": {
-    "async": "3.0.0",
-    "fs-extra": "8.0.1",
+    "async": "3.1.0",
+    "fs-extra": "8.1.0",
     "glob": "7.1.4",
     "lodash": "4.17.15",
-    "yargs": "13.2.4"
+    "yargs": "13.3.0"
   },
   "devDependencies": {
     "klaw": "3.0.0",
-    "mocha": "6.1.4"
+    "mocha": "6.2.0"
   },
   "license": "Apache-2.0",
   "scripts": {
