@@ -64,8 +64,8 @@ describe("Test output", function() {
             assert.ok(fileExists(resultFile), "file does not exist in result: " + subFilePath);
 
             if (!fs.lstatSync(expectedFile).isDirectory()) {
-              var result = fs.readFileSync(resultFile, "utf-8");
-              var expected = fs.readFileSync(expectedFile, "utf-8");
+              var result = fs.readFileSync(resultFile, "utf-8").replace(/\r\n/g, "\n");
+              var expected = fs.readFileSync(expectedFile, "utf-8").replace(/\r\n/g, "\n");
 
               assert.equal(result, expected, "content of " + subFilePath + " is not expected");
             }
