@@ -158,6 +158,7 @@ The following can be configured:
       * `dest` {String} - destination relative to the clientlib folder including base
   * `cwd` {String} - change working directory (relative to the context / global `cwd` option); only available with glob pattern
   * `flatten` {Boolean} - using file's basename instead of folder hierarchy; default true; only available with glob pattern
+  * `ignore` `{String|Array<String>}` - glob pattern or array of glob patterns for matches to exclude
 
 For an glob example see example section below.
 
