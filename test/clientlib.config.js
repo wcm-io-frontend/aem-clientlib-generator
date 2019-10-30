@@ -238,6 +238,17 @@ module.exports = {
                     "src/frontend/resources/template.html"
                 ]
             }
+        },
+        {
+            name: "test.base.apps.ignoreOption",
+            assets: {
+                js: {
+                    cwd: "src/frontend/js",
+                    flatten: false,
+                    files: ["**/*"],
+                    ignore: ["**/*.min.js", "**/*.min.js.map"]
+                }
+            }
         }
     ]
 };
