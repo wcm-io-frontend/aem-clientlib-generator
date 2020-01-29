@@ -249,6 +249,17 @@ module.exports = {
                     ignore: ["**/*.min.js", "**/*.min.js.map"]
                 }
             }
-        }
+        },
+        {
+          // client lib with a combination of .css and .less files
+          name: "test.base.apps.withLessFiles",
+          assets: {
+              css: [
+                "src/frontend/css/grid.less",
+                "src/frontend/css/styling.css",
+                "src/frontend/css/lib.css",
+            ]
+          }
+      }
     ]
 };
