@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.0
+
+### Added
+
+- add _serializationFormat_ 'slingxml' which can be used for XML outputs for Sling Initial Content
+
 ## 1.4.2
 
 ### Fixed
