@@ -1,10 +1,36 @@
 # Changelog
 
-## 1.5.0
+## 1.6.0
+
+### Fixed
+
+- update packages to resolve securitiy warnings
 
 ### Added
 
 - add _serializationFormat_ 'slingxml' which can be used for XML outputs for Sling Initial Content
+
+## 1.5.0
+
+### Added
+
+- add ability to use a ignore pattern to exclude assets
+
+## 1.4.4
+
+### Fixed
+
+- update packages to resolve security warnings
+
+### Added
+
+- Add ability to create directories recursively 
+
+## 1.4.3
+
+### Added
+
+- add package-lock.json to make use of the npm command "npm ci" for ci builds
 
 ## 1.4.2
 
