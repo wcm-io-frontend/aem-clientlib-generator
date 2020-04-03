@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.7.0
+
+### Update
+
+- update minimum required node version to be >=10.19.0
+
 ## 1.6.0
 
 ### Fixed
@@ -24,7 +30,7 @@
 
 ### Added
 
-- Add ability to create directories recursively 
+- Add ability to create directories recursively
 
 ## 1.4.3
 
