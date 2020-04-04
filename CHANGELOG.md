@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.1
+
+- add travis ci
+
 ## 1.7.0
 
 ### Update

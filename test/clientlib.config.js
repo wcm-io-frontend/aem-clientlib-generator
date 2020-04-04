@@ -210,7 +210,7 @@ module.exports = {
         {
             name: "test.base.apps.serializationFormatXMLCustomOutput",
             serializationFormat: "xml",
-            outputPath: 'result/clientlibs-root/redirectOutputTestWithXml',
+            outputPath: 'result/clientlibs-root/redirectOutputTestWithXML',
             allowProxy: true,
             categories: [
                 "test.base.apps.six",
