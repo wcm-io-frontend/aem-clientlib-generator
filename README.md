@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/wcm-io-frontend/aem-clientlib-generator.svg?branch=master)](https://travis-ci.org/wcm-io-frontend/aem-clientlib-generator)
+[![GitHub issues](https://img.shields.io/github/issues/wcm-io-frontend/aem-clientlib-generator)](https://github.com/wcm-io-frontend/aem-clientlib-generator/issues)
 
 # aem-clientlib-generator
 
