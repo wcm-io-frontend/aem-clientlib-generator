@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ifahrentholz/aem-clientlib-generator.svg?branch=master)](https://travis-ci.org/ifahrentholz/aem-clientlib-generator)
+[![Build Status](https://travis-ci.org/wcm-io-frontend/aem-clientlib-generator.svg?branch=master)](https://travis-ci.org/wcm-io-frontend/aem-clientlib-generator)
 
 # aem-clientlib-generator
 
