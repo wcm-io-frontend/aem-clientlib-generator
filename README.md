@@ -121,6 +121,8 @@ clientlib(arrProps, { verbose: true }, function () {
   - `categories` `{Array<String>}` to set a category for the clientLib (optional), ovrrides the default that uses the name as category
   - `cssProcessor` `{Array<String>}` configuration for the clientlib CSS processor, requires AEM 6.2 (optional)
   - `jsProcessor` `{Array<String>}` configuration for the clientlib JS processor, requires AEM 6.2 (optional)
+  - `replaces` `{String}` Path to the library that is replaced by 'this' one
+  - `disableIfReplacing` `{boolean}` Disable this library if it would replace the old one
   - `assets` `{Object}` content that should be copied to the clientlib folder, more details below (required)
   - `allowProxy` `{Boolean}` allow for Clientlib creation under `/apps/myapp/clientLibs` but enable proxy to `/etc.clientlibs/myapp/clientlibs/mylib` See [AEM 6.3 Documentation](https://docs.adobe.com/docs/en/aem/6-3/develop/the-basics/clientlibs.html#Locating%20a%20Client%20Library%20Folder%20and%20Using%20the%20Proxy%20Client%20Libraries%20Servlet)
   - `longCacheKey` `{String}` optional string with placeholders to use with URL Fingerprinting, eq. `"${project.version}-${buildNumber}"`. This requires the [build-helper-maven-plugin](http://www.mojohaus.org/build-helper-maven-plugin/usage.html) to be configured, see [wcm-io-samples - Clientlibs](https://github.com/wcm-io/wcm-io-samples/blob/develop/bundles/clientlibs/pom.xml#L56).

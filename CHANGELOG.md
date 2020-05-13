@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.7.2
+
+### Added
+
+- Add 'replaces' property to 'clientLibDirectoryFields'. It defines the path to the library that is replaced by 'this' one.
+- Add 'disableIfReplacing' property to 'clientLibDirectoryFields'. It disables this library if it would replace the old one.
+
 ## 1.7.1
 
 - add travis ci
