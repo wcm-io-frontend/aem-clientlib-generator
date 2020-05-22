@@ -99,6 +99,7 @@ module.exports = {
                     flatten: false, // remove this option if you like a flat list of files in your clientlib
                     cwd: "src/frontend/js/", // change working directory (will be stripped from destination)
                     files: [
+                        "**/app.js", // this file should be included only once
                         "**/*.js", // match all js files recursively
                         "**/*.js.map"
                     ]
