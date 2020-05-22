@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.7.3
+- Filter out duplicated entry files #30
+
 ## 1.7.2
 
 ### Added
