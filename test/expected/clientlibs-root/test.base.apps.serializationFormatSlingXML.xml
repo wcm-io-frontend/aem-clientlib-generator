@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:primaryType="cq:ClientLibraryFolder"
-    categories="[test.base.apps.six,test.categorie.in.config]"
-    embed="[test.base.apps.thirdapp]"
-    dependencies="test.base.apps.mainapp"
-    allowProxy="{Boolean}true"/>
+<node>
+    <name>test.base.apps.serializationFormatSlingXML</name>
+    <primaryNodeType>cq:ClientLibraryFolder</primaryNodeType>
+    <property>
+        <name>categories</name>
+        <values>
+            <value>test.base.apps.six</value>
+            <value>test.categorie.in.config</value>
+        </values>
+        <type>String</type>
+    </property>
+    <property>
+        <name>embed</name>
+        <values>
+            <value>test.base.apps.thirdapp</value>
+        </values>
+        <type>String</type>
+    </property>
+    <property>
+        <name>dependencies</name>
+        <values>
+            <value>test.base.apps.mainapp</value>
+        </values>
+        <type>String</type>
+    </property>
+    <property>
+        <name>allowProxy</name>
+        <value>true</value>
+        <type>Boolean</type>
+    </property>
+    <property>
+        <name>longCacheKey</name>
+        <value>${project.version}-${buildNumber}</value>
+        <type>String</type>
+    </property>
+</node>

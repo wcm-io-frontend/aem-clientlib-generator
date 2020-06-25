@@ -244,6 +244,7 @@ module.exports = {
             name: "test.base.apps.serializationFormatSlingXML",
             serializationFormat: "slingxml",
             allowProxy: true,
+            longCacheKey: "${project.version}-${buildNumber}",
             categories: [
                 "test.base.apps.six",
                 "test.categorie.in.config"
@@ -251,7 +252,9 @@ module.exports = {
             embed: [
                 "test.base.apps.thirdapp" // this clientlib will be auto embedded in AEM (kind of `merging`)
             ],
-            dependencies: "test.base.apps.mainapp",
+            dependencies: [
+                "test.base.apps.mainapp"
+            ],
             assets: {
                 js: {
                     base: "js", // by default the `base` is the asset key property
