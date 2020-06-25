@@ -1,11 +1,16 @@
 # Changelog
 
+## 1.7.4
+
+### Fixed
+
+- Fix Sling-Initial-Content XML content (serialization format: slingxml)
+
 ## 1.7.3
 
 ### Fixed
 
 - Filter out duplicated entry files #30
-- Fix Sling-Initial-Content XML content (serialization format: slingxml)
 
 ## 1.7.2
 
