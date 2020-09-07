@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.7.5
+
+### Fixed
+
+- Fix security alerts (updated npm packages)
+
 ## 1.7.4
 
 ### Fixed
