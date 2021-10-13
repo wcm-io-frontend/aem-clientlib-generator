@@ -23,7 +23,8 @@ module.exports = {
     context: __dirname,
     clientLibRoot: path.resolve(__dirname, "result", "clientlibs-root"),
 
-    libs: [{
+    libs: [
+        {
             name: "test.base.apps.mainapp",
             cssProcessor: ["default:none", "min:none"], // disable minification for CSS
             jsProcessor: ["default:none", "min:gcc"], // using google closure compiler instead of YUI,
@@ -31,9 +32,9 @@ module.exports = {
             longCacheKey: "${project.version}-${buildNumber}",
             assets: {
                 js: [{
-                        src: "src/frontend/js/app.js",
-                        dest: "app.js"
-                    },
+                    src: "src/frontend/js/app.js",
+                    dest: "app.js"
+                },
                     {
                         src: "src/frontend/js/libs/mylib.min.js",
                         dest: "libs/mylib.min.js"
@@ -286,15 +287,51 @@ module.exports = {
             }
         },
         {
-          // client lib with a combination of .css and .less files
-          name: "test.base.apps.withLessFiles",
-          assets: {
-              css: [
-                "src/frontend/css/grid.less",
-                "src/frontend/css/styling.css",
-                "src/frontend/css/lib.css",
-            ]
-          }
-      }
+            // client lib with a combination of .css and .less files
+            name: "test.base.apps.withLessFiles",
+            assets: {
+                css: [
+                    "src/frontend/css/grid.less",
+                    "src/frontend/css/styling.css",
+                    "src/frontend/css/lib.css",
+                ]
+            }
+        },
+        {
+            name: "test.base.apps.customProperty",
+            serializationFormat: "xml",
+            outputPath: 'result/clientlibs-root/test.base.apps.customProperty',
+            customProperties: [
+                "customProperty"
+            ],
+            customProperty: "customValue",
+            allowProxy: true,
+            categories: [
+                "test.base.apps.six",
+                "test.categorie.in.config"
+            ],
+            embed: [
+                "test.base.apps.thirdapp" // this clientlib will be auto embedded in AEM (kind of `merging`)
+            ],
+            dependencies: "test.base.apps.mainapp",
+            assets: {
+                js: {
+                    base: "js", // by default the `base` is the asset key property
+                    files: [{
+                        src: "src/frontend/secondapp/js/lib.js",
+                        dest: "secondapp-lib.js"
+                    }]
+                },
+                css: {
+                    base: "style", // changes the `base` from `css` (default) to `style`
+                    files: [
+                        "src/frontend/secondapp/main.css"
+                    ]
+                },
+                resources: [
+                    "src/frontend/resources/template.html"
+                ]
+            }
+        }
     ]
 };
