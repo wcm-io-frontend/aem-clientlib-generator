@@ -119,6 +119,7 @@ clientlib(arrProps, { verbose: true }, function () {
   - `embed` `{Array<String>}` other Clientlib names that should be embedded (optional)
   - `dependencies` `{Array<String>}` other Clientlib names that should be included (optional)
   - `categories` `{Array<String>}` to set a category for the clientLib (optional), ovrrides the default that uses the name as category
+  - `customProperties` `{Array<String>}` allow more than the default set of properties
   - `cssProcessor` `{Array<String>}` configuration for the clientlib CSS processor, requires AEM 6.2 (optional)
   - `jsProcessor` `{Array<String>}` configuration for the clientlib JS processor, requires AEM 6.2 (optional)
   - `replaces` `{String}` Path to the library that is replaced by 'this' one
