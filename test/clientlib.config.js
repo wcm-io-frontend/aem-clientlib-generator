@@ -23,8 +23,7 @@ module.exports = {
     context: __dirname,
     clientLibRoot: path.resolve(__dirname, "result", "clientlibs-root"),
 
-    libs: [
-        {
+    libs: [{
             name: "test.base.apps.mainapp",
             cssProcessor: ["default:none", "min:none"], // disable minification for CSS
             jsProcessor: ["default:none", "min:gcc"], // using google closure compiler instead of YUI,
@@ -32,9 +31,9 @@ module.exports = {
             longCacheKey: "${project.version}-${buildNumber}",
             assets: {
                 js: [{
-                    src: "src/frontend/js/app.js",
-                    dest: "app.js"
-                },
+                        src: "src/frontend/js/app.js",
+                        dest: "app.js"
+                    },
                     {
                         src: "src/frontend/js/libs/mylib.min.js",
                         dest: "libs/mylib.min.js"
