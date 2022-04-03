@@ -209,6 +209,75 @@ module.exports = {
             }
         },
         {
+            name: "test.base.apps.customProperties",
+            serializationFormat: "xml",
+            outputPath: "result/clientlibs-root/test.base.apps.customProperties",
+            customProperties: [
+                "customProperty"
+            ],
+            customProperty: "customValue",
+            allowProxy: true,
+            categories: [
+                "test.base.apps.six",
+                "test.categorie.in.config"
+            ],
+            embed: [
+                "test.base.apps.thirdapp" // this clientlib will be auto embedded in AEM (kind of `merging`)
+            ],
+            dependencies: "test.base.apps.mainapp",
+            assets: {
+                js: {
+                    base: "js", // by default the `base` is the asset key property
+                    files: [{
+                        src: "src/frontend/secondapp/js/lib.js",
+                        dest: "secondapp-lib.js"
+                    }]
+                },
+                css: {
+                    base: "style", // changes the `base` from `css` (default) to `style`
+                    files: [
+                        "src/frontend/secondapp/main.css"
+                    ]
+                },
+                resources: [
+                    "src/frontend/resources/template.html"
+                ]
+            }
+        },
+        {
+            name: "test.base.apps.customPropertiesNotAllowed",
+            serializationFormat: "xml",
+            outputPath: "result/clientlibs-root/test.base.apps.customPropertiesNotAllowed",
+            customProperty: "customValue",
+            allowProxy: true,
+            categories: [
+                "test.base.apps.six",
+                "test.categorie.in.config"
+            ],
+            embed: [
+                "test.base.apps.thirdapp" // this clientlib will be auto embedded in AEM (kind of `merging`)
+            ],
+            dependencies: "test.base.apps.mainapp",
+            assets: {
+                js: {
+                    base: "js", // by default the `base` is the asset key property
+                    files: [{
+                        src: "src/frontend/secondapp/js/lib.js",
+                        dest: "secondapp-lib.js"
+                    }]
+                },
+                css: {
+                    base: "style", // changes the `base` from `css` (default) to `style`
+                    files: [
+                        "src/frontend/secondapp/main.css"
+                    ]
+                },
+                resources: [
+                    "src/frontend/resources/template.html"
+                ]
+            }
+        },
+        {
             name: "test.base.apps.serializationFormatXMLCustomOutput",
             serializationFormat: "xml",
             outputPath: 'result/clientlibs-root/redirectOutputTestWithXML',
