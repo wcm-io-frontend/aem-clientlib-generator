@@ -47,7 +47,7 @@
     "clientlib": "bin/clientlib-cli.js"
   },
   "dependencies": {
-    "async": "3.2.0",
+    "async": "3.2.2",
     "fs-extra": "9.0.1",
     "glob": "7.1.6",
     "lodash": "4.17.21",
