@@ -61,5 +61,6 @@
   "scripts": {
     "test": "mocha",
     "build": "bin/clientlib-cli.js test/clientlib.config.js --verbose"
-  }
+  },
+  "type": "module"
 }
