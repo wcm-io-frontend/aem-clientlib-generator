@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "async": "^3.2.3",
-    "fs-extra": "9.0.1",
+    "fs-extra": "^9.0.1",
     "glob": "7.1.6",
     "lodash": "4.17.21",
     "yargs": "^16.2.0"
@@ -61,5 +61,6 @@
   "scripts": {
     "test": "mocha",
     "build": "bin/clientlib-cli.js test/clientlib.config.js --verbose"
-  }
+  },
+  "type": "module"
 }
