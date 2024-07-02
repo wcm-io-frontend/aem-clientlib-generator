@@ -17,34 +17,40 @@
 
 "use strict";
 
-var fs = require("fs");
-var walk = require("klaw");
-var fse = require("fs-extra");
-var clientlib = require("../lib/clientlib");
-var fileExists = require("../lib/clientlib").fileExists;
-var path = require("path");
-var assert = require('assert');
+import { mkdirSync, lstatSync, readFileSync } from "fs";
+import walk from "klaw";
+import fsExtra from "fs-extra";
+import clientlib from "../lib/clientlib.js";
+import { fileExists } from "../lib/clientlib.js";
+import { join, relative } from "path";
+import { ok, equal } from 'assert';
 
-var clientLibConf = require("./clientlib.config");
+import clientLibConf from "./clientlib.config.js";
 
-var resultDir = path.join(__dirname, "result");
-var expectedDir = path.join(__dirname, "expected");
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+var {removeSync} = fsExtra;
+var resultDir = join(__dirname, "result");
+var expectedDir = join(__dirname, "expected");
 
 
 describe("Test output", function() {
 
   // cleanup result folder
   beforeEach(function(){
-    fse.removeSync(resultDir);
-    fs.mkdirSync(resultDir);
+    removeSync(resultDir);
+    mkdirSync(resultDir);
   });
 
   it("should create files correctly", function(done) {
+    var config = JSON.parse(JSON.stringify(clientLibConf));
+    var libs = [...clientLibConf.libs];
+    delete config.libs;
 
-    var libs = clientLibConf.libs;
-    delete clientLibConf.libs;
-
-    clientlib(libs, clientLibConf, function() {
+    clientlib(libs, config, function() {
 
       var items = []; // files, directories, symlinks, etc
       walk(expectedDir)
@@ -54,20 +60,20 @@ describe("Test output", function() {
         .on("end", function () {
 
           items.forEach(function(expectedFile) {
-            var subFilePath = path.relative(expectedDir, expectedFile);
+            var subFilePath = relative(expectedDir, expectedFile);
             if (!subFilePath) {
               return;
             }
 
-            var resultFile = path.join(resultDir, subFilePath);
+            var resultFile = join(resultDir, subFilePath);
 
-            assert.ok(fileExists(resultFile), "file does not exist in result: " + subFilePath);
+            ok(fileExists(resultFile), "file does not exist in result: " + subFilePath);
 
-            if (!fs.lstatSync(expectedFile).isDirectory()) {
-              var result = fs.readFileSync(resultFile, "utf-8").replace(/\r\n/g, "\n");
-              var expected = fs.readFileSync(expectedFile, "utf-8").replace(/\r\n/g, "\n");
+            if (!lstatSync(expectedFile).isDirectory()) {
+              var result = readFileSync(resultFile, "utf-8").replace(/\r\n/g, "\n");
+              var expected = readFileSync(expectedFile, "utf-8").replace(/\r\n/g, "\n");
 
-              assert.equal(result, expected, "content of " + subFilePath + " is not expected");
+              equal(result, expected, "content of " + subFilePath + " is not expected");
             }
 
           });
