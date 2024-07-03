@@ -47,15 +47,15 @@
     "clientlib": "bin/clientlib-cli.js"
   },
   "dependencies": {
-    "async": "^3.2.3",
-    "fs-extra": "^9.0.1",
-    "glob": "7.1.6",
+    "async": "^3.2.5",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.4.2",
     "lodash": "4.17.21",
-    "yargs": "^16.2.0"
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "klaw": "3.0.0",
-    "mocha": "7.1.1"
+    "klaw": "^4.1.0",
+    "mocha": "^10.6.0"
   },
   "license": "Apache-2.0",
   "scripts": {

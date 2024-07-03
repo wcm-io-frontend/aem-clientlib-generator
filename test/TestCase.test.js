@@ -23,12 +23,12 @@ import fsExtra from "fs-extra";
 import clientlib from "../lib/clientlib.js";
 import { fileExists } from "../lib/clientlib.js";
 import { join, relative } from "path";
-import { ok, equal } from 'assert';
+import { ok, equal } from "assert";
 
 import clientLibConf from "./clientlib.config.js";
 
-import path from 'path';
-import { fileURLToPath } from 'url';
+import path from "path";
+import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
