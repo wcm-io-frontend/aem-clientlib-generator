@@ -17,38 +17,42 @@
 
 "use strict";
 
-var path = require("path");
-module.exports = {
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export default {
 
     context: __dirname,
     clientLibRoot: path.resolve(__dirname, "result", "clientlibs-root"),
 
     libs: [{
-            name: "test.base.apps.mainapp",
-            cssProcessor: ["default:none", "min:none"], // disable minification for CSS
-            jsProcessor: ["default:none", "min:gcc"], // using google closure compiler instead of YUI,
-            allowProxy: true,
-            longCacheKey: "${project.version}-${buildNumber}",
-            assets: {
-                js: [{
-                        src: "src/frontend/js/app.js",
-                        dest: "app.js"
-                    },
-                    {
-                        src: "src/frontend/js/libs/mylib.min.js",
-                        dest: "libs/mylib.min.js"
-                    },
-                    {
-                        src: "src/frontend/js/libs/mylib.min.js.map",
-                        dest: "libs/mylib.min.js.map"
-                    }
-                ],
-                css: [
-                    "src/frontend/css/styling.css",
-                    "src/frontend/css/lib.css"
-                ]
-            }
-        },
+        name: "test.base.apps.mainapp",
+        cssProcessor: ["default:none", "min:none"], // disable minification for CSS
+        jsProcessor: ["default:none", "min:gcc"], // using google closure compiler instead of YUI,
+        allowProxy: true,
+        longCacheKey: "${project.version}-${buildNumber}",
+        assets: {
+            js: [{
+                src: "src/frontend/js/app.js",
+                dest: "app.js"
+            },
+                {
+                    src: "src/frontend/js/libs/mylib.min.js",
+                    dest: "libs/mylib.min.js"
+                },
+                {
+                    src: "src/frontend/js/libs/mylib.min.js.map",
+                    dest: "libs/mylib.min.js.map"
+                }
+            ],
+            css: [
+                "src/frontend/css/styling.css",
+                "src/frontend/css/lib.css"
+            ]
+        }
+    },
         {
             name: "test.base.apps.secondapp",
             categories: [
@@ -355,15 +359,15 @@ module.exports = {
             }
         },
         {
-          // client lib with a combination of .css and .less files
-          name: "test.base.apps.withLessFiles",
-          assets: {
-              css: [
-                "src/frontend/css/grid.less",
-                "src/frontend/css/styling.css",
-                "src/frontend/css/lib.css",
-            ]
-          }
-      }
+            // client lib with a combination of .css and .less files
+            name: "test.base.apps.withLessFiles",
+            assets: {
+                css: [
+                    "src/frontend/css/grid.less",
+                    "src/frontend/css/styling.css",
+                    "src/frontend/css/lib.css",
+                ]
+            }
+        }
     ]
 };

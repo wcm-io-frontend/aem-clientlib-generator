@@ -6,7 +6,7 @@ os:
 notifications:
   email: false
 node_js:
-  - "10.19.0"
+  - "16.18.0"
 cache:
   npm: true,
   directories:
