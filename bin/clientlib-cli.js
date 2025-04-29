@@ -24,7 +24,7 @@ yargs
       type: "boolean",
       describe: "Prints more details"
     }
-  }).strict();
+  });
 
 var argv = yargs.argv;
 var configPath = path.resolve(process.cwd(), DEFAULT_FILE);
