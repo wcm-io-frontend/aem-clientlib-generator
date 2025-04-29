@@ -1,0 +1,10 @@
+name-template: 'Next Release'
+tag-template: 'next'
+
+exclude-contributors:
+  - renovate
+
+template: |
+  ## What’s Changed
+
+  $CHANGES
