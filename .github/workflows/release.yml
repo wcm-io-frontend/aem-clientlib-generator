@@ -47,9 +47,9 @@ jobs:
 
       - name: set next version
         run: |
-          npm version ${{ github.event.inputs.release_type }}
           git config user.name "GitHub Actions"
           git config user.email noreply@github.com
+          npm version ${{ github.event.inputs.release_type }}
           git add package.json package-lock.json
           git commit --message "set next version"
           git push
