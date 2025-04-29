@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.com/wcm-io-frontend/aem-clientlib-generator.svg?branch=master)](https://travis-ci.com/wcm-io-frontend/aem-clientlib-generator)
+aem-clientlib-generator
+======
+[![Build](https://github.com/wcm-io-frontend/aem-clientlib-generator/workflows/Build/badge.svg)](https://github.com/wcm-io-frontend/aem-clientlib-generator/actions?query=workflow%3ABuild)
 [![GitHub issues](https://img.shields.io/github/issues/wcm-io-frontend/aem-clientlib-generator)](https://github.com/wcm-io-frontend/aem-clientlib-generator/issues)
-
-# aem-clientlib-generator
 
 A node plugin that creates ClientLib configuration files (repository nodes) for
 [AEM Client Libraries](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/clientlibs.html),

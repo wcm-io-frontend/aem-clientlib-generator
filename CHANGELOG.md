@@ -1,8 +1,13 @@
 # Changelog
 
+## 1.9.0
+
+- Switch to GitHub Actions
+
 ## 1.8.0
 
 - Update npm packages to fix security vulnerabilities in dependencies.
+
 ## 1.7.5
 
 ### Fixed
