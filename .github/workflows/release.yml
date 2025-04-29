@@ -49,7 +49,7 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email noreply@github.com
-          npm version ${{ github.event.inputs.release_type }}
+          npm version ${{ github.event.inputs.release_type }} -m "[npm] Release %s"
           git push
         shell: bash
   
