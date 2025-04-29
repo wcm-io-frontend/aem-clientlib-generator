@@ -1,0 +1,77 @@
+name: Release and Publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: Type of release (e.g., patch, minor, major)
+        required: true
+        default: patch
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+
+      - run: npm ci
+      - run: npm run test
+
+  release-and-publish-npm-registry:
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: write
+      pull-requests: read
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+          registry-url: https://registry.npmjs.org
+
+      - name: set next version
+        run: |
+          npm version ${{ github.event.inputs.release_type }}
+          git config user.name "GitHub Actions"
+          git config user.email noreply@github.com
+          git add package.json package-lock.json
+          git commit --message "set next version"
+          git push
+        shell: bash
+  
+      - run: npm ci
+      - run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Read properties from package.json
+        id: package_json
+        uses: zoexx/github-action-json-file-properties@1.0.6
+        with:
+          file_path: package.json
+
+      - uses: release-drafter/release-drafter@v6
+        with:
+          disable-autolabeler: true
+          name: ${{ steps.package_json.outputs.version }}
+          tag: ${{ steps.package_json.outputs.version }}
+          version: ${{ steps.package_json.outputs.version }}
+          publish: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
