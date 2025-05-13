@@ -1,0 +1,33 @@
+# Integration Tests
+
+name: Integration Tests
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  integration-tests:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        java-version: [21]
+        node-version: [lts/*]
+        os: [ubuntu-latest,windows-latest,macos-latest]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4        
+      - name: Use Java ${{ matrix.java-version }}
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ matrix.java-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: "Integration Test: wcmio-archetype"
+        run: mvn clean verify
+        working-directory: integration-test/wcmio-archetype

@@ -9,7 +9,8 @@
     "start": "webpack-dev-server --mode development --open",
     "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production",
-    "build:clientlibs": "npm run build:prod && node ../../bin/clientlib-cli.js clientlib.config.cjs"
+    "build:clientlibs": "npm run build:prod && node ../../bin/clientlib-cli.js clientlib.config.cjs",
+    "test:compare-results": "node compare-results.js"
   },
   "dependencies": {
     "bootstrap": "4.6.2",
@@ -17,6 +18,7 @@
     "popper.js": "1.16.1"
   },
   "devDependencies": {
+    "dir-compare": "^4.0.0",
     "@babel/core": "7.27.1",
     "@babel/preset-env": "7.27.2",
     "@babel/register": "7.27.1",

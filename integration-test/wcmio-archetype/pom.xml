@@ -47,13 +47,23 @@
             </configuration>
           </execution>
           <execution>
-            <id>npm production</id>
+            <id>npm build:clientlibs</id>
             <goals>
               <goal>npm</goal>
             </goals>
             <phase>process-resources</phase>
             <configuration>
               <arguments>run build:clientlibs</arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>npm test:compare-results</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <phase>process-resources</phase>
+            <configuration>
+              <arguments>run test:compare-results</arguments>
             </configuration>
           </execution>
         </executions>
