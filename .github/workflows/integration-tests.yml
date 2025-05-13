@@ -30,6 +30,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+      - name: npm ci
+        run: npm ci
       - name: "Integration Test: wcmio-archetype"
         run: mvn clean verify
         working-directory: integration-test/wcmio-archetype
