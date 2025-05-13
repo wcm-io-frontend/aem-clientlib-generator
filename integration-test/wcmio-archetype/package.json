@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "dir-compare": "^4.0.0",
+    "diff": "^5.2.0",
     "@babel/core": "7.27.1",
     "@babel/preset-env": "7.27.2",
     "@babel/register": "7.27.1",
