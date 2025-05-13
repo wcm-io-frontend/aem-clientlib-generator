@@ -18,7 +18,7 @@
     "popper.js": "1.16.1"
   },
   "devDependencies": {
-    "dir-compare": "^4.0.0",
+    "dir-compare": "^5.0.0",
     "diff": "^7.0.0",
     "@babel/core": "7.27.1",
     "@babel/preset-env": "7.27.2",
