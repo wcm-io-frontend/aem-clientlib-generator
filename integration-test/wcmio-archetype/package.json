@@ -9,7 +9,7 @@
     "start": "webpack-dev-server --mode development --open",
     "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production",
-    "build:clientlibs": "npm run build:prod && clientlib clientlib.config.cjs"
+    "build:clientlibs": "npm run build:prod && node ../../bin/clientlib-cli.js clientlib.config.cjs"
   },
   "dependencies": {
     "bootstrap": "4.6.2",
@@ -20,7 +20,7 @@
     "@babel/core": "7.27.1",
     "@babel/preset-env": "7.27.2",
     "@babel/register": "7.27.1",
-    "aem-clientlib-generator": "1.8.2",
+    "aem-clientlib-generator": "file:../../..",
     "babel-loader": "10.0.0",
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-plugin-transform-es2015-arrow-functions": "6.22.0",
