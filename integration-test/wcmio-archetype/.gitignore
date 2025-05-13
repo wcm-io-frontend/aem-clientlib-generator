@@ -1,2 +1,4 @@
 dist/
+result/
 node/
+package-lock.json
