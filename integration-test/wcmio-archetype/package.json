@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "name": "myproject1-frontend",
+  "version": "1.0.0",
+  "description": "Frontend build pipeline for AEM projects",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open",
+    "build:dev": "webpack --mode development",
+    "build:prod": "webpack --mode production",
+    "build:clientlibs": "npm run build:prod && clientlib clientlib.config.cjs"
+  },
+  "dependencies": {
+    "bootstrap": "4.6.2",
+    "jquery": "3.7.1",
+    "popper.js": "1.16.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.27.1",
+    "@babel/preset-env": "7.27.2",
+    "@babel/register": "7.27.1",
+    "aem-clientlib-generator": "1.8.2",
+    "babel-loader": "10.0.0",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-es2015-arrow-functions": "6.22.0",
+    "clean-webpack-plugin": "4.0.0",
+    "copy-webpack-plugin": "13.0.0",
+    "css-loader": "7.1.2",
+    "handlebars": "4.7.8",
+    "handlebars-loader": "1.7.3",
+    "html-webpack-plugin": "5.6.3",
+    "mini-css-extract-plugin": "2.9.2",
+    "postcss-loader": "8.1.1",
+    "sass": "1.87.0",
+    "sass-loader": "16.0.5",
+    "webpack": "5.99.8",
+    "webpack-cli": "6.0.1",
+    "webpack-dev-server": "5.2.1",
+    "webpack-merge": "6.0.1"
+  }
+}
