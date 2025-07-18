@@ -19,9 +19,9 @@
   },
   "devDependencies": {
     "dir-compare": "5.0.0",
-    "diff": "8.0.0",
-    "@babel/core": "7.27.1",
-    "@babel/preset-env": "7.27.2",
+    "diff": "8.0.2",
+    "@babel/core": "7.28.0",
+    "@babel/preset-env": "7.28.0",
     "@babel/register": "7.27.1",
     "aem-clientlib-generator": "file:../../..",
     "babel-loader": "10.0.0",
@@ -35,11 +35,11 @@
     "html-webpack-plugin": "5.6.3",
     "mini-css-extract-plugin": "2.9.2",
     "postcss-loader": "8.1.1",
-    "sass": "1.88.0",
+    "sass": "1.89.2",
     "sass-loader": "16.0.5",
-    "webpack": "5.99.8",
+    "webpack": "5.100.1",
     "webpack-cli": "6.0.1",
-    "webpack-dev-server": "5.2.1",
+    "webpack-dev-server": "5.2.2",
     "webpack-merge": "6.0.1"
   }
 }
