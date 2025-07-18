@@ -13,6 +13,7 @@
       "matchUpdateTypes": ["major", "minor", "patch", "pin", "pinDigest", "digest", "lockFileMaintenance"],
       "groupName": "integration-test/wcmio-archetype dependencies",
       "matchFileNames": ["integration-test/wcmio-archetype/**"],
+      "schedule": ["before 8am on the first day of the month"],
       "automerge": true
     }
   ]
