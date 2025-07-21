@@ -1,4 +1,3 @@
-import $ from "jquery";
 import { Carousel } from "bootstrap";
 
 export default () => {
