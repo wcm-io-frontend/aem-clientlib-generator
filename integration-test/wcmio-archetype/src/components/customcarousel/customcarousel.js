@@ -1,6 +1,8 @@
-import $ from "jquery";
-import "bootstrap/js/dist/carousel.js";
+import { Carousel } from "bootstrap";
 
 export default () => {
-  $(".carousel").carousel();
+  // Initialize all carousels on the page
+  document.querySelectorAll('.carousel').forEach(carouselEl => {
+    new Carousel(carouselEl);
+  });
 };
