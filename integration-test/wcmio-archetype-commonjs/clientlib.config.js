@@ -9,7 +9,7 @@ module.exports = {
   libs: [
     {
       name: "myproject1.app",
-      serializationFormat: "xml",
+      serializationFormat: "json",
       allowProxy: true,
       assets: {
         js: ["dist/static/js/app.js", "dist/static/js/app.js.map"],
@@ -23,7 +23,7 @@ module.exports = {
     },
     {
       name: "myproject1.all",
-      serializationFormat: "xml",
+      serializationFormat: "json",
       embed: [
         "core.wcm.components.commons.datalayer.v1",
         "core.wcm.components.commons.site.container",

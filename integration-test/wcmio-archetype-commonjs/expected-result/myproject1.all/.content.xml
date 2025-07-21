@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:primaryType="cq:ClientLibraryFolder"
-    categories="[myproject1.all]" 
-    embed="[core.wcm.components.commons.datalayer.v1,core.wcm.components.commons.site.container,core.wcm.components.image.v2,core.wcm.components.carousel.v1,core.wcm.components.tabs.v1,core.wcm.components.accordion.v1,myproject1.app]"
-    cssProcessor="[default:none,min:none]"
-    jsProcessor="[default:none,min:gcc;compilationLevel=whitespace;languageIn=ECMASCRIPT_2018;languageOut=ECMASCRIPT_2018]"
-    allowProxy="{Boolean}true"/>
