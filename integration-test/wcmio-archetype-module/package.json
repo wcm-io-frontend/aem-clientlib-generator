@@ -13,7 +13,7 @@
     "test:compare-results": "node compare-results.js"
   },
   "dependencies": {
-    "bootstrap": "5.3.3",
+    "bootstrap": "5.3.7",
     "@popperjs/core": "2.11.8"
   },
   "devDependencies": {
