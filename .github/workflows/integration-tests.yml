@@ -32,13 +32,13 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: npm ci
         run: npm ci
-      - name: "Integration Test: wcmio-archetype"
+      - name: "Integration Test: wcmio-archetype-module"
         run: mvn clean verify
-        working-directory: integration-test/wcmio-archetype
+        working-directory: integration-test/wcmio-archetype-module
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: wcmio-archetype-result-${{ matrix.os }}-java${{ matrix.java-version }}
-          path: integration-test/wcmio-archetype/result/
+          name: wcmio-archetype-module-result-${{ matrix.os }}-java${{ matrix.java-version }}
+          path: integration-test/wcmio-archetype-module/result/
           if-no-files-found: warn
           include-hidden-files: true
