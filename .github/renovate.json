@@ -14,7 +14,8 @@
       "groupName": "integration-test dependencies",
       "matchFileNames": ["integration-test/**"],
       "schedule": ["before 8am on the first day of the month"],
-      "automerge": true
+      "automerge": true,
+      "addLabels": ["integration-test"]
     }
   ]
 }

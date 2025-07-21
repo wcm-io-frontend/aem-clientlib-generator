@@ -1,6 +1,8 @@
 name-template: 'Next Release'
 tag-template: 'next'
 
+exclude-labels:
+  - integration-test
 exclude-contributors:
   - renovate
 
