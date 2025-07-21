@@ -5,12 +5,13 @@ var clientlib = require("../lib/clientlib");
 
 var path = require("path");
 var fs = require("fs");
-var yargs = require("yargs")
+var yargs = require("yargs/yargs");
+var { hideBin } = require("yargs/helpers");
+
+var argv = yargs(hideBin(process.argv))
   .usage("aem-clientlib-generator " + require("../package.json").version + "\n" +
     "Usage with config file: clientlib [path] [options]" + "\n\n" +
-    "Default config path: " + DEFAULT_FILE);
-
-yargs
+    "Default config path: " + DEFAULT_FILE)
   .help("help")
   .alias("help", "h")
   .version()
@@ -24,9 +25,8 @@ yargs
       type: "boolean",
       describe: "Prints more details"
     }
-  });
+  }).argv;
 
-var argv = yargs.argv;
 var configPath = path.resolve(process.cwd(), DEFAULT_FILE);
 
 if (argv._ && argv._.length > 0) {
