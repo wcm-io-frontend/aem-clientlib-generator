@@ -1,5 +1,6 @@
 {
   "jcr:primaryType": "cq:ClientLibraryFolder",
+  "allowProxy": true,
   "categories": [
     "test.base.apps.mainapp"
   ],
@@ -11,6 +12,5 @@
     "default:none",
     "min:gcc"
   ],
-  "allowProxy": true,
   "longCacheKey": "${project.version}-${buildNumber}"
 }

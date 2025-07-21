@@ -1,7 +1,12 @@
 {
   "jcr:primaryType": "cq:ClientLibraryFolder",
+  "allowProxy": true,
   "categories": [
     "myproject1.all"
+  ],
+  "cssProcessor": [
+    "default:none",
+    "min:none"
   ],
   "embed": [
     "core.wcm.components.commons.datalayer.v1",
@@ -12,13 +17,8 @@
     "core.wcm.components.accordion.v1",
     "myproject1.app"
   ],
-  "cssProcessor": [
-    "default:none",
-    "min:none"
-  ],
   "jsProcessor": [
     "default:none",
     "min:gcc;compilationLevel=whitespace;languageIn=ECMASCRIPT_2018;languageOut=ECMASCRIPT_2018"
-  ],
-  "allowProxy": true
+  ]
 }
