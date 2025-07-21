@@ -3,17 +3,15 @@
     <name>test.base.apps.serializationFormatSlingXML</name>
     <primaryNodeType>cq:ClientLibraryFolder</primaryNodeType>
     <property>
+        <name>allowProxy</name>
+        <value>true</value>
+        <type>Boolean</type>
+    </property>
+    <property>
         <name>categories</name>
         <values>
             <value>test.base.apps.six</value>
             <value>test.categorie.in.config</value>
-        </values>
-        <type>String</type>
-    </property>
-    <property>
-        <name>embed</name>
-        <values>
-            <value>test.base.apps.thirdapp</value>
         </values>
         <type>String</type>
     </property>
@@ -25,9 +23,11 @@
         <type>String</type>
     </property>
     <property>
-        <name>allowProxy</name>
-        <value>true</value>
-        <type>Boolean</type>
+        <name>embed</name>
+        <values>
+            <value>test.base.apps.thirdapp</value>
+        </values>
+        <type>String</type>
     </property>
     <property>
         <name>longCacheKey</name>

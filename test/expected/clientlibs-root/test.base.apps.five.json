@@ -4,10 +4,10 @@
     "test.base.apps.five",
     "test.categorie.in.config"
   ],
-  "embed": [
-    "test.base.apps.thirdapp"
-  ],
   "dependencies": [
     "test.base.apps.mainapp"
+  ],
+  "embed": [
+    "test.base.apps.thirdapp"
   ]
 }
