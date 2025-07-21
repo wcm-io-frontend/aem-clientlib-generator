@@ -1,5 +1,5 @@
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import { pathConfig } from "../../../path.config";
+import { pathConfig } from "../../../path.config.js";
 
 export const scss = {
   plugins: [

@@ -1,5 +1,5 @@
 import path from "path";
-import { pathConfig } from "../../../path.config";
+import { pathConfig } from "../../../path.config.js";
 
 export const output = {
   path: path.resolve(pathConfig.paths.target),

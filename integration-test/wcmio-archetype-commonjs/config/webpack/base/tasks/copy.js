@@ -1,6 +1,6 @@
 import path from "path";
 import CopyWebpackPlugin from "copy-webpack-plugin";
-import { pathConfig } from "../../../path.config";
+import { pathConfig } from "../../../path.config.js";
 
 export const copy = {
   plugins: [

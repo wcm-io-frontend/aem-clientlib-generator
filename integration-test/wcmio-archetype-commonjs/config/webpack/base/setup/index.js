@@ -1,2 +1,2 @@
-export * from "./entryConfig";
-export * from "./outputConfig";
+export * from "./entryConfig.js";
+export * from "./outputConfig.js";
