@@ -11,8 +11,8 @@
   "packageRules": [
     {
       "matchUpdateTypes": ["major", "minor", "patch", "pin", "pinDigest", "digest", "lockFileMaintenance"],
-      "groupName": "integration-test/wcmio-archetype dependencies",
-      "matchFileNames": ["integration-test/wcmio-archetype/**"],
+      "groupName": "integration-test dependencies",
+      "matchFileNames": ["integration-test/**"],
       "schedule": ["before 8am on the first day of the month"],
       "automerge": true
     }
