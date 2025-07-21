@@ -1,5 +1,5 @@
 import path from "path";
-import { pathConfig } from "../../../path.config.js";
+import { pathConfig } from "../../../path.config";
 
 export const handlebars = {
   module: {

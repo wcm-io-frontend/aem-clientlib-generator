@@ -1,7 +1,7 @@
-import { merge } from "webpack-merge";
-import { devServer } from "./server.js";
+import webpackMerge from "webpack-merge";
+import { devServer } from "./server";
 
-export const devConfig = merge(devServer, {
+export const devConfig = webpackMerge(devServer, {
   devtool: "source-map",
   bail: true
 });
