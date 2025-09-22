@@ -1,6 +1,6 @@
 aem-clientlib-generator
 ======
-[![Build](https://github.com/wcm-io-frontend/aem-clientlib-generator/workflows/Build/badge.svg)](https://github.com/wcm-io-frontend/aem-clientlib-generator/actions?query=workflow%3ABuild)
+[![Build](https://github.com/wcm-io-frontend/aem-clientlib-generator/actions/workflows/build.yml/badge.svg?branch=develop)](https://github.com/wcm-io-frontend/aem-clientlib-generator/actions?query=workflow%3ABuild)
 [![GitHub issues](https://img.shields.io/github/issues/wcm-io-frontend/aem-clientlib-generator)](https://github.com/wcm-io-frontend/aem-clientlib-generator/issues)
 
 A node plugin that creates ClientLib configuration files (repository nodes) for
