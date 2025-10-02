@@ -6,6 +6,7 @@
     "name": "wcm.io",
     "url": "https://wcm.io"
   },
+  "type": "module",
   "contributors": [
     {
       "name": "Ingo Fahrentholz"
