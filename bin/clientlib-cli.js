@@ -1,15 +1,17 @@
 #!/usr/bin/env node
 
-var DEFAULT_FILE = "clientlib.config.js";
-var clientlib = require("../lib/clientlib");
+import url from 'node:url';
 
-var path = require("path");
-var fs = require("fs");
-var yargs = require("yargs/yargs");
-var { hideBin } = require("yargs/helpers");
+var DEFAULT_FILE = "clientlib.config.js";
+import clientlib from "../lib/clientlib.js";
+
+import path from "node:path";
+import fs from "fs";
+import yargs from "yargs"
+import { hideBin } from "yargs/helpers"
 
 var argv = yargs(hideBin(process.argv))
-  .usage("aem-clientlib-generator " + require("../package.json").version + "\n" +
+  .usage("aem-clientlib-generator " + process.env.npm_package_version + "\n" +
     "Usage with config file: clientlib [path] [options]" + "\n\n" +
     "Default config path: " + DEFAULT_FILE)
   .help("help")
@@ -41,11 +43,12 @@ if (!fs.existsSync(configPath)) {
   process.exit(1);
 }
 
-var clientLibConf = require(configPath);
-var libs = clientLibConf.libs;
-delete clientLibConf.libs;
+import(path.isAbsolute(configPath) ? url.pathToFileURL(configPath).toString() : configPath ).then(conf => {
+  var libs = [...conf.default.libs];
+  var clientLibConf = conf.default;
+  delete conf.default.libs;
+  clientLibConf.dry = argv.dry;
+  clientLibConf.verbose = argv.verbose || argv.dry;
 
-clientLibConf.dry = argv.dry;
-clientLibConf.verbose = argv.verbose || argv.dry;
-
-clientlib(libs, clientLibConf);
+  clientlib(libs, clientLibConf);
+}).catch(err => console.error(err));

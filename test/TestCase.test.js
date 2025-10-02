@@ -17,15 +17,18 @@
 
 "use strict";
 
-var fs = require("fs");
-var walk = require("klaw");
-var fse = require("fs-extra");
-var clientlib = require("../lib/clientlib");
-var fileExists = require("../lib/clientlib").fileExists;
-var path = require("path");
-var assert = require('assert');
+import fs from "fs";
+import walk from "klaw";
+import fse from "fs-extra";
+import clientlib, { fileExists } from "../lib/clientlib.js";
+import path from "path";
+import { fileURLToPath } from "url";
+import assert from "assert";
 
-var clientLibConf = require("./clientlib.config");
+import clientLibConf from "./clientlib.config.js";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 var resultDir = path.join(__dirname, "result");
 var expectedDir = path.join(__dirname, "expected");
