@@ -9,7 +9,7 @@
     "start": "webpack-dev-server --mode development --open",
     "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production",
-    "build:clientlibs": "npm run build:prod && node ../../bin/clientlib-cli.js clientlib.config.cjs",
+    "build:clientlibs": "npm run build:prod && node ../../bin/clientlib-cli.js",
     "test:compare-results": "node compare-results.js"
   },
   "dependencies": {
