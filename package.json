@@ -45,14 +45,14 @@
   },
   "dependencies": {
     "async": "^3.2.3",
-    "fs-extra": "11.3.0",
+    "fs-extra": "11.3.2",
     "glob": "7.2.3",
     "lodash": "4.17.21",
     "yargs": "^18.0.0"
   },
   "devDependencies": {
     "klaw": "4.1.0",
-    "mocha": "11.7.1"
+    "mocha": "11.7.4"
   },
   "license": "Apache-2.0",
   "scripts": {
