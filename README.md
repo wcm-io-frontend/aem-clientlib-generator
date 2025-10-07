@@ -36,9 +36,9 @@ Options:
 A clientlib configuration file is a simple exported module:
 
 ```js
-module.exports = {
+export default {
   // default working directory (can be changed per 'cwd' in every asset option)
-  context: __dirname,
+  context: import.meta.dirname,
 
   // path to the clientlib root folder (output)
   clientLibRoot: "path/to/clientlib-root",
@@ -76,7 +76,7 @@ module.exports = {
       ]
     }
   }
-}
+};
 ```
 
 #### npm scripts
