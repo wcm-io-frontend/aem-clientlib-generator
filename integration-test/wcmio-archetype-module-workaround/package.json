@@ -1,0 +1,44 @@
+{
+  "private": true,
+  "name": "myproject1-frontend",
+  "version": "1.0.0",
+  "description": "Frontend build pipeline for AEM projects",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open",
+    "build:dev": "webpack --mode development",
+    "build:prod": "webpack --mode production",
+    "build:clientlibs": "npm run build:prod && node ../../bin/clientlib-cli.js clientlib.config.cjs",
+    "test:compare-results": "node compare-results.js"
+  },
+  "dependencies": {
+    "bootstrap": "5.3.8",
+    "@popperjs/core": "2.11.8"
+  },
+  "devDependencies": {
+    "dir-compare": "5.0.0",
+    "diff": "8.0.2",
+    "@babel/core": "7.28.4",
+    "@babel/preset-env": "7.28.3",
+    "@babel/register": "7.28.3",
+    "aem-clientlib-generator": "file:../../..",
+    "babel-loader": "10.0.0",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-es2015-arrow-functions": "6.22.0",
+    "clean-webpack-plugin": "4.0.0",
+    "copy-webpack-plugin": "13.0.1",
+    "css-loader": "7.1.2",
+    "handlebars": "4.7.8",
+    "handlebars-loader": "1.7.3",
+    "html-webpack-plugin": "5.6.4",
+    "mini-css-extract-plugin": "2.9.4",
+    "postcss-loader": "8.2.0",
+    "sass": "1.93.2",
+    "sass-loader": "16.0.5",
+    "webpack": "5.102.0",
+    "webpack-cli": "6.0.1",
+    "webpack-dev-server": "5.2.2",
+    "webpack-merge": "6.0.1"
+  }
+}
