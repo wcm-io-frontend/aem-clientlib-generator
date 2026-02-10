@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 const resultDir = path.join(__dirname, 'result');
 const expectedDir = path.join(__dirname, 'expected-result');
 
-const options = { compareContent: true, excludeFilter: '.DS_Store' };
+const options = { compareContent: true, excludeFilter: '.DS_Store,*.map' };
 const res = dircompare.compareSync(resultDir, expectedDir, options);
 
 if (!res.same) {
