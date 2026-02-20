@@ -36,7 +36,7 @@ jobs:
       - name: "Integration Test: wcmio-archetype-module"
         run: mvn clean verify
         working-directory: integration-test/wcmio-archetype-module
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         if: always()
         with:
           name: wcmio-archetype-module-result-${{ matrix.os }}-java${{ matrix.java-version }}
@@ -47,7 +47,7 @@ jobs:
       - name: "Integration Test: wcmio-archetype-module-cjs"
         run: mvn clean verify
         working-directory: integration-test/wcmio-archetype-module-cjs
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         if: always()
         with:
           name: wcmio-archetype-module-cjs-result-${{ matrix.os }}-java${{ matrix.java-version }}
@@ -58,7 +58,7 @@ jobs:
       - name: "Integration Test: wcmio-archetype-commonjs"
         run: mvn clean verify
         working-directory: integration-test/wcmio-archetype-commonjs
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         if: always()
         with:
           name: wcmio-archetype-commonjs-result-${{ matrix.os }}-java${{ matrix.java-version }}
