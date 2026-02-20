@@ -6,7 +6,8 @@
   "enabledManagers": [
     "npm",
     "nvm",
-    "maven"
+    "maven",
+    "github-actions"
   ],
   "packageRules": [
     {
