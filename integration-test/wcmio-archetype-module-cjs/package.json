@@ -27,7 +27,7 @@
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-plugin-transform-es2015-arrow-functions": "6.22.0",
     "clean-webpack-plugin": "4.0.0",
-    "copy-webpack-plugin": "13.0.1",
+    "copy-webpack-plugin": "14.0.0",
     "css-loader": "7.1.4",
     "handlebars": "4.7.8",
     "handlebars-loader": "1.7.3",
