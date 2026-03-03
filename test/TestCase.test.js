@@ -79,4 +79,44 @@ describe("Test output", function() {
         });
     });
   });
+
+  // Regression test for https://github.com/wcm-io-frontend/aem-clientlib-generator/issues/150
+  // libs as a single object (not wrapped in an array) should be supported
+  it("should support libs as a single object instead of an array (issue #150)", function(done) {
+
+    var singleLib = {
+      name: "test.base.apps.mainapp",
+      assets: {
+        js: [
+          "src/frontend/js/app.js"
+        ],
+        css: [
+          "src/frontend/css/styling.css"
+        ]
+      }
+    };
+
+    var options = {
+      context: __dirname,
+      clientLibRoot: path.resolve(__dirname, "result", "clientlibs-root")
+    };
+
+    // Verify the CLI normalization handles a single object without throwing
+    var libs = Array.isArray(singleLib) ? [...singleLib] : [singleLib];
+    assert.ok(Array.isArray(libs), "libs should be normalized to an array");
+    assert.equal(libs.length, 1, "normalized libs array should contain one entry");
+    assert.equal(libs[0].name, "test.base.apps.mainapp");
+
+    // The library function should also handle a single object without error
+    clientlib(singleLib, options, function() {
+
+      var mainappDir = path.join(options.clientLibRoot, "test.base.apps.mainapp");
+      assert.ok(fileExists(mainappDir), "clientlib directory should be created for single-object libs");
+
+      var jsonFile = path.join(options.clientLibRoot, "test.base.apps.mainapp.json");
+      assert.ok(fileExists(jsonFile), "clientlib JSON descriptor should be created for single-object libs");
+
+      done();
+    });
+  });
 });

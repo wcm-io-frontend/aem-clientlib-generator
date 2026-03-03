@@ -44,7 +44,7 @@ if (!fs.existsSync(configPath)) {
 }
 
 import(path.isAbsolute(configPath) ? url.pathToFileURL(configPath).toString() : configPath ).then(conf => {
-  var libs = [...conf.default.libs];
+  var libs = Array.isArray(conf.default.libs) ? [...conf.default.libs] : [conf.default.libs];
   var clientLibConf = conf.default;
   delete conf.default.libs;
   clientLibConf.dry = argv.dry;
