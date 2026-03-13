@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - if: ${{ github.repository_owner == 'wcm-io-frontend' }}
-        uses: release-drafter/release-drafter@v6
+        uses: release-drafter/release-drafter@v7
         with:
           disable-autolabeler: true
         env:
