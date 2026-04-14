@@ -47,7 +47,6 @@
     "async": "^3.2.3",
     "fs-extra": "11.3.4",
     "glob": "13.0.6",
-    "lodash": "4.17.23",
     "yargs": "^18.0.0"
   },
   "devDependencies": {
