@@ -58,7 +58,7 @@ jobs:
 
       - name: Read properties from package.json
         id: package_json
-        uses: zoexx/github-action-json-file-properties@1.0.6
+        uses: zoexx/github-action-json-file-properties@42c424cc2a0f9dfd36c79aedb70d429c0ae3e3fa # 1.0.7
         with:
           file_path: package.json
 
