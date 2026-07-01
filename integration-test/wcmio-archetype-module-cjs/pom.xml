@@ -15,7 +15,7 @@
   <packaging>pom</packaging>
 
   <properties>
-    <nodejs.version>v22.15.0</nodejs.version>
+    <nodejs.version>v24.18.0</nodejs.version>
   </properties>
 
   <build>
