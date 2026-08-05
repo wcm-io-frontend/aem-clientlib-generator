@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "klaw": "4.1.0",
-    "mocha": "11.7.6"
+    "mocha": "11.8.0"
   },
   "license": "Apache-2.0",
   "scripts": {
